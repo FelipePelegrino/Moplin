@@ -5,6 +5,7 @@ object Versions {
     const val appCompat = "1.3.1"
     const val material = "1.4.0"
     const val constraintLayout = "2.1.1"
+    const val buildTools = "30.0.2"
     const val jUnit = "4.12"
     const val ktx = "1.6.0"
     const val testjUnit = "1.1.3"

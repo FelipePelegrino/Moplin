@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk = ConfigData.compileSdkVersion
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
         applicationId = ConfigData.applicationId
