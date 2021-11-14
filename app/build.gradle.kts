@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
+    id(Plugins.navigationSafeArgs)
 }
 
 android {
@@ -35,6 +36,10 @@ android {
             jvmTarget = Versions.jvmTarget
         }
     }
+
+    buildFeatures{
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -43,6 +48,10 @@ dependencies {
     implementation(Deps.appCompat)
     implementation(Deps.materialDesign)
     implementation(Deps.constraintLayout)
+    implementation(Deps.legacySupport)
+    implementation(Deps.liveData)
+    implementation(Deps.viewModel)
+    implementation(Deps.navigation)
     testImplementation(Deps.junit)
     androidTestImplementation(Test.testjUnit)
     androidTestImplementation(Test.espresso)

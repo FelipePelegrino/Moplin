@@ -10,4 +10,8 @@ object Versions {
     const val ktx = "1.6.0"
     const val testjUnit = "1.1.3"
     const val espresso = "3.4.0"
+    const val legacy = "1.0.0"
+    const val liveData = "2.3.1"
+    const val viewModel = "2.3.1"
+    const val navigation = "2.3.5"
 }
