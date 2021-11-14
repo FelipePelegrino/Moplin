@@ -1,27 +1,27 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    id(Plugins.androidApplication)
+    id(Plugins.kotlinAndroid)
 }
 
 android {
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId = "com.gmail.devpelegrino.moplim"
+        applicationId = ConfigData.applicationId
         minSdk = ConfigData.minSdkVersion
         targetSdk = ConfigData.targetSdkVersion
         versionCode = ConfigData.versionCode
         versionName = ConfigData.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = ConfigData.androidJUnitRunner
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile(ConfigData.proGuardFile),
+                ConfigData.proGuardRules
             )
         }
     }

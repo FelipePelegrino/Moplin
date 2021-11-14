@@ -1,6 +1,11 @@
+object Plugins {
+    val androidApplication by lazy {"com.android.application"}
+    val kotlinAndroid by lazy {"kotlin-android"}
+}
+
 object Deps {
-    val gradleBuild = "com.android.tools.build:gradle:${Versions.gradle}"
-    val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinGradlePlugin}"
+    val gradleBuild by lazy{ "com.android.tools.build:gradle:${Versions.gradle}" }
+    val kotlinGradle by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinGradlePlugin}" }
     val ktx by lazy { "androidx.core:core-ktx:${Versions.ktx}" }
     val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
     val kotlin by lazy { "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinGradlePlugin}" }
