@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/MainTheme"></activity>
     </application>
 
 </manifest>
