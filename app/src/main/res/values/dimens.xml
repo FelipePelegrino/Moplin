@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_base_root_layout">4dp</dimen>
+    <!-- General -->
+    <dimen name="root_layout_padding">4dp</dimen>
+
+    <!-- CardView -->
+    <dimen name="card_corner_radius">16dp</dimen>
+
+    <!-- Header Movie List -->
     <dimen name="header_movie_list_height">80dp</dimen>
+
+    <!-- Item Movie List -->
+    <dimen name="item_image_height">200dp</dimen>
+    <dimen name="item_image_width">140dp</dimen>
+    <dimen name="item_margin_end">8dp</dimen>
+
+    <!-- RecyclerView -->
+    <dimen name="recycler_padding">4dp</dimen>
+    <dimen name="recycler_margin">6dp</dimen>
+
 </resources>

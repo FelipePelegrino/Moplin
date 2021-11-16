@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Moplim</string>
+    <string name="text_view_now_playing">Em Exibição</string>
+    <string name="text_view_upcoming">Em Breve</string>
+    <string name="text_view_popular">Mais Populares</string>
+    <string name="text_view_top_rated">Melhores Avaliados</string>
+    <string name="recycler_now_playing_description">Lista de filmes em exibição</string>
+    <string name="recycler_upcoming_description">Lista de filmes em breve</string>
+    <string name="recycler_popular_description">Lista de filmes mais populares</string>
+    <string name="recycler_top_rated_description">Lista de filmes melhores avaliados</string>
+
 </resources>
