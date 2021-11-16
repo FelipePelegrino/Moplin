@@ -1,6 +1,6 @@
 package com.gmail.devpelegrino.moplim.model
 
-data class MovieList(
+data class Movie(
     val posterPath: String?,
     val id: Int?
 )
