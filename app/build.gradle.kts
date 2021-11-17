@@ -2,6 +2,7 @@ plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
     id(Plugins.navigationSafeArgs)
+    id(Plugins.kapt)
 }
 
 android {
@@ -52,6 +53,11 @@ dependencies {
     implementation(Deps.liveData)
     implementation(Deps.viewModel)
     implementation(Deps.navigation)
+    implementation(Deps.retrofit)
+    implementation(Deps.gson)
+    implementation(Deps.adapterRxJava)
+    implementation(Deps.glide)
+    annotationProcessor(Deps.annotationGlide)
     testImplementation(Deps.junit)
     androidTestImplementation(Test.testjUnit)
     androidTestImplementation(Test.espresso)

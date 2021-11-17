@@ -14,4 +14,6 @@ object Versions {
     const val liveData = "2.3.1"
     const val viewModel = "2.3.1"
     const val navigation = "2.3.5"
+    const val retrofit = "2.9.0"
+    const val glide = "4.12.0"
 }
