@@ -42,6 +42,26 @@ class MovieListFragment : Fragment() {
         setObservers()
     }
 
+    private fun actionClickNowPlaying(position: Int) {
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(adapterNowPlaying.getMovieId(position))
+        Navigation.findNavController(binding.root).navigate(action)
+    }
+
+    private fun actionClickPopular(position: Int) {
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(adapterPopular.getMovieId(position))
+        Navigation.findNavController(binding.root).navigate(action)
+    }
+
+    private fun actionClickTopRated(position: Int) {
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(adapterTopRated.getMovieId(position))
+        Navigation.findNavController(binding.root).navigate(action)
+    }
+
+    private fun actionClickUpComing(position: Int) {
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(adapterUpComing.getMovieId(position))
+        Navigation.findNavController(binding.root).navigate(action)
+    }
+
     private fun setViewModel() {
         viewModel = ViewModelProvider(this, MovieListViewModelFactory(viewLifecycleOwner)).get(
             MovieListViewModel::class.java
@@ -49,10 +69,10 @@ class MovieListFragment : Fragment() {
     }
 
     private fun setRecyclerViews() {
-        adapterNowPlaying = MovieListAdapter()
-        adapterPopular = MovieListAdapter()
-        adapterTopRated = MovieListAdapter()
-        adapterUpComing = MovieListAdapter()
+        adapterNowPlaying = MovieListAdapter { position -> actionClickNowPlaying(position) }
+        adapterPopular = MovieListAdapter { position -> actionClickPopular(position) }
+        adapterTopRated = MovieListAdapter { position -> actionClickTopRated(position) }
+        adapterUpComing = MovieListAdapter { position -> actionClickUpComing(position) }
         binding.recyclerNowPlaying.adapter = adapterNowPlaying
         binding.recyclerPopular.adapter = adapterPopular
         binding.recyclerTopRated.adapter = adapterTopRated
@@ -69,7 +89,7 @@ class MovieListFragment : Fragment() {
     private fun setObserverNowPlaying() {
         viewModel.moviesNowPlaying.observe(viewLifecycleOwner,
             Observer {
-                if(it.isNotEmpty()) {
+                if (it.isNotEmpty()) {
                     adapterNowPlaying.setMovies(it)
                 }
             })
@@ -88,7 +108,7 @@ class MovieListFragment : Fragment() {
     private fun setObserverPopular() {
         viewModel.moviesPopular.observe(viewLifecycleOwner,
             Observer {
-                if(it.isNotEmpty()) {
+                if (it.isNotEmpty()) {
                     adapterPopular.setMovies(it)
                 }
             })
@@ -107,7 +127,7 @@ class MovieListFragment : Fragment() {
     private fun setObserverTopRated() {
         viewModel.moviesTopRated.observe(viewLifecycleOwner,
             Observer {
-                if(it.isNotEmpty()) {
+                if (it.isNotEmpty()) {
                     adapterTopRated.setMovies(it)
                 }
             })
@@ -126,7 +146,7 @@ class MovieListFragment : Fragment() {
     private fun setObserverUpComing() {
         viewModel.moviesUpComing.observe(viewLifecycleOwner,
             Observer {
-                if(it.isNotEmpty()) {
+                if (it.isNotEmpty()) {
                     adapterUpComing.setMovies(it)
                 }
             })

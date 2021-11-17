@@ -19,12 +19,21 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"
             app:popUpTo="@id/movieListFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false" >
+            <argument
+                android:name="movieId"
+                app:argType="integer" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.gmail.devpelegrino.moplim.ui.MovieDetailsFragment"
         android:label="movie_details_fragment"
-        tools:layout="@layout/movie_details_fragment" />
+        tools:layout="@layout/movie_details_fragment" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 </navigation>
