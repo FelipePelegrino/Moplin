@@ -9,7 +9,6 @@
     </style>
 
     <style name="RecyclerViewBase">
-        <item name="android:padding">@dimen/recycler_padding</item>
         <item name="android:layout_marginTop">@dimen/recycler_margin</item>
         <item name="android:orientation">horizontal</item>
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>

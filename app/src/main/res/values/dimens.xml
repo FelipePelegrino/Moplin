@@ -10,9 +10,9 @@
     <dimen name="header_movie_list_height">80dp</dimen>
 
     <!-- Item Movie List -->
-    <dimen name="item_image_height">200dp</dimen>
-    <dimen name="item_image_width">140dp</dimen>
-    <dimen name="item_margin_end">8dp</dimen>
+    <dimen name="item_image_height">225dp</dimen>
+    <dimen name="item_image_width">150dp</dimen>
+    <dimen name="item_margin_end">4dp</dimen>
 
     <!-- RecyclerView -->
     <dimen name="recycler_padding">4dp</dimen>
