@@ -74,6 +74,15 @@ class MovieListFragment : Fragment() {
                 }
             })
         viewModel.callApiGetMoviesNowPlaying()
+
+        adapterNowPlaying.lastMoviesRecyclerView.observe(viewLifecycleOwner,
+            Observer {
+                if (it) {
+                    adapterNowPlaying.setLastMoviesFalse()
+                    viewModel.updatePageMoviesNowPlaying()
+                    viewModel.callApiGetMoviesNowPlaying()
+                }
+            })
     }
 
     private fun setObserverPopular() {
@@ -84,6 +93,15 @@ class MovieListFragment : Fragment() {
                 }
             })
         viewModel.callApiGetMoviesPopular()
+
+        adapterPopular.lastMoviesRecyclerView.observe(viewLifecycleOwner,
+            Observer {
+                if (it) {
+                    adapterPopular.setLastMoviesFalse()
+                    viewModel.updatePageMoviesPopular()
+                    viewModel.callApiGetMoviesPopular()
+                }
+            })
     }
 
     private fun setObserverTopRated() {
@@ -94,6 +112,15 @@ class MovieListFragment : Fragment() {
                 }
             })
         viewModel.callApiGetMoviesTopRated()
+
+        adapterTopRated.lastMoviesRecyclerView.observe(viewLifecycleOwner,
+            Observer {
+                if (it) {
+                    adapterTopRated.setLastMoviesFalse()
+                    viewModel.updatePageMoviesTopRated()
+                    viewModel.callApiGetMoviesTopRated()
+                }
+            })
     }
 
     private fun setObserverUpComing() {
@@ -104,5 +131,14 @@ class MovieListFragment : Fragment() {
                 }
             })
         viewModel.callApiGetMoviesUpComing()
+
+        adapterUpComing.lastMoviesRecyclerView.observe(viewLifecycleOwner,
+            Observer {
+                if (it) {
+                    adapterUpComing.setLastMoviesFalse()
+                    viewModel.updatePageMoviesUpComing()
+                    viewModel.callApiGetMoviesUpComing()
+                }
+            })
     }
 }

@@ -1,5 +1,6 @@
 package com.gmail.devpelegrino.moplim.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LiveData
@@ -18,7 +19,15 @@ class MovieListAdapter() :
         get() = _lastMoviesRecyclerView
 
     fun setMovies(movies: MutableList<Movie>) {
-        _movies = movies
+        if(_movies.isEmpty()) {
+            _movies = movies
+        } else {
+            var iterator = movies.iterator()
+            do {
+                _movies.add(iterator.next())
+            } while(iterator.hasNext())
+        }
+
         notifyDataSetChanged()
     }
 
@@ -41,7 +50,7 @@ class MovieListAdapter() :
     override fun getItemCount(): Int = _movies.size
 
     private fun checkLastItems(position: Int) {
-        if(position > _movies.size - 2) {
+        if(position > _movies.size - 4) {
             _lastMoviesRecyclerView.value = true
         }
     }

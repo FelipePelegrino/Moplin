@@ -97,7 +97,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
     }
 
     private fun getMoviesTopRated() {
-        var result = _repository.getMoviesTopRated(_pageNowPlaying)
+        var result = _repository.getMoviesTopRated(_pageTopRated)
         result.observe(lifecycleOwner,
             Observer {
                 it?.let { resultApi ->
@@ -117,7 +117,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
             })
     }
 
-    fun updatePageTopRated() {
+    fun updatePageMoviesTopRated() {
         _pageTopRated++
     }
 
@@ -126,7 +126,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
     }
 
     private fun getMoviesUpComing() {
-        var result = _repository.getMoviesUpComing(_pageNowPlaying)
+        var result = _repository.getMoviesUpComing(_pageUpComing)
         result.observe(lifecycleOwner,
             Observer {
                 it?.let { resultApi ->
