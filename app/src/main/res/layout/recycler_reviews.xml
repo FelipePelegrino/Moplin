@@ -20,7 +20,7 @@
             android:contentDescription="@string/recycler_similar_movies_description"
             android:orientation="vertical"
             tools:itemCount="3"
-            tools:listitem="@layout/item_comments" />
+            tools:listitem="@layout/item_reviews" />
 
     </com.google.android.material.card.MaterialCardView>
 </layout>

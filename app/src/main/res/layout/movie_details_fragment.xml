@@ -64,8 +64,8 @@
                 app:layout_constraintTop_toBottomOf="@id/text_content_synopsis" />
 
             <include
-                android:id="@+id/list_comments"
-                layout="@layout/recycler_comments"
+                android:id="@+id/list_reviews"
+                layout="@layout/recycler_reviews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/movie_details_list_comments_margin"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_similar_movies"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/list_comments" />
+                app:layout_constraintTop_toBottomOf="@id/list_reviews" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_similar_movies"

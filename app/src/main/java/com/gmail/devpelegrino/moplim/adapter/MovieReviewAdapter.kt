@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.gmail.devpelegrino.moplim.databinding.ItemCommentsBinding
+import com.gmail.devpelegrino.moplim.databinding.ItemReviewsBinding
 import com.gmail.devpelegrino.moplim.network.entity.ItemReview
 import com.gmail.devpelegrino.moplim.network.entity.ReviewListEntity
 
@@ -18,7 +18,7 @@ class MovieReviewAdapter : RecyclerView.Adapter<MovieReviewAdapter.MovieReviewVi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieReviewViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemCommentsBinding.inflate(inflater, parent, false)
+        val binding = ItemReviewsBinding.inflate(inflater, parent, false)
 
         return MovieReviewViewHolder(binding)
     }
@@ -59,7 +59,7 @@ class MovieReviewAdapter : RecyclerView.Adapter<MovieReviewAdapter.MovieReviewVi
         }
     }
 
-    class MovieReviewViewHolder(private val binding: ItemCommentsBinding) :
+    class MovieReviewViewHolder(private val binding: ItemReviewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(review: ItemReview) {
             binding.itemCommentUsername.text = review.author

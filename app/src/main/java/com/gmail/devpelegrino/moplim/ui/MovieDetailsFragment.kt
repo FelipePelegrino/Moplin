@@ -24,7 +24,7 @@ class MovieDetailsFragment : Fragment() {
     private lateinit var viewModel: MovieDetailsViewModel
     private lateinit var bindingFragment: MovieDetailsFragmentBinding
     private lateinit var adapterSimilarMovies: MovieListAdapter
-    private lateinit var adapterComments: MovieReviewAdapter
+    private lateinit var adapterReviews: MovieReviewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +34,7 @@ class MovieDetailsFragment : Fragment() {
         bindingFragment = MovieDetailsFragmentBinding.inflate(inflater)
         bindingFragment.lifecycleOwner = viewLifecycleOwner
         bindingFragment.headerDetails.lifecycleOwner = viewLifecycleOwner
-        bindingFragment.listComments.lifecycleOwner = viewLifecycleOwner
+        bindingFragment.listReviews.lifecycleOwner = viewLifecycleOwner
 
         initVariables()
         setConfigurations()
@@ -72,9 +72,9 @@ class MovieDetailsFragment : Fragment() {
 
     private fun setRecyclerViews() {
         adapterSimilarMovies = MovieListAdapter { position -> actionClickSimilarMovies(position) }
-        adapterComments = MovieReviewAdapter()
+        adapterReviews = MovieReviewAdapter()
         bindingFragment.recyclerSimilarMovies.adapter = adapterSimilarMovies
-        bindingFragment.listComments.recyclerComments.adapter = adapterComments
+        bindingFragment.listReviews.recyclerComments.adapter = adapterReviews
     }
 
     private fun actionClickSimilarMovies(position: Int) {
@@ -115,15 +115,15 @@ class MovieDetailsFragment : Fragment() {
         viewModel.movieReview.observe(viewLifecycleOwner,
             Observer {
                 if (it.results.isNotEmpty()) {
-                    adapterComments.setMovieReview(it)
+                    adapterReviews.setMovieReview(it)
                 }
             })
         viewModel.callApiGetMovieReview(args.movieId)
 
-        adapterComments.lastMovieReviewRecyclerView.observe(viewLifecycleOwner,
+        adapterReviews.lastMovieReviewRecyclerView.observe(viewLifecycleOwner,
             Observer {
                 if (it) {
-                    adapterComments.setLastMovieReviewRecyclerView()
+                    adapterReviews.setLastMovieReviewRecyclerView()
                     viewModel.updatePageMovieReview()
                     viewModel.callApiGetMovieReview(args.movieId)
                 }
