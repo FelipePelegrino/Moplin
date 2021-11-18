@@ -6,9 +6,9 @@
 
 ## Overview
 
-<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/gif_app.gif" width="700">
-<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/details_screen_1.jpeg" width="600">
-<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/details_screen_2.jpeg" width="600">
+<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/gif_app.gif" width="400">
+<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/details_screen_1.jpeg" width="300">
+<img src="/app/src/main/java/com/gmail/devpelegrino/moplim/records/details_screen_2.jpeg" width="300">
 
 ### Tecnologias
 
