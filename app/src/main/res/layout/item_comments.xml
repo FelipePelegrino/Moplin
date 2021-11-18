@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/background_list_comments"
-    android:orientation="vertical">
+<layout>
 
-    <TextView
-        android:id="@+id/item_comment_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Alexandra"
-        android:alpha=".9"
-        android:layout_marginTop="@dimen/item_comments_margin_top"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/item_comments_text_size"
-        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/item_comment"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/item_comments_margin_top"
-        android:textSize="@dimen/item_comments_text_size"
-        android:maxLines="3"
-        android:ellipsize="end"
-        android:textColor="@color/text_comment_color"
-        tools:text="It was great. This movie was a continuation of the Avengers of the Eternal War. See it first and then this movie"/>
+        android:background="@color/background_list_comments"
+        android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_comments_view_height"
-        android:layout_marginTop="@dimen/item_comments_margin_top"
-        android:background="@color/text_comment_color"/>
+        <TextView
+            android:id="@+id/item_comment_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_comments_margin_top"
+            android:alpha=".9"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/item_comments_text_size"
+            android:textStyle="bold"
+            tools:text="Alexandra" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/item_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_comments_margin_top"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/text_comment_color"
+            android:textSize="@dimen/item_comments_text_size"
+            tools:text="It was great. This movie was a continuation of the Avengers of the Eternal War. See it first and then this movie" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_comments_view_height"
+            android:layout_marginTop="@dimen/item_comments_margin_top"
+            android:background="@color/text_comment_color" />
+
+    </LinearLayout>
+</layout>

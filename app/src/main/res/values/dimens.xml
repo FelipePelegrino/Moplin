@@ -31,6 +31,7 @@
     <dimen name="movie_details_content_text_size">14dp</dimen>
     <dimen name="movie_details_recycle_comments_margin">16dp</dimen>
     <dimen name="movie_details_list_comments_margin">10dp</dimen>
+    <dimen name="movie_details_synopsis_padding">4dp</dimen>
 
     <!-- Item Movie List -->
     <dimen name="item_image_height">225dp</dimen>

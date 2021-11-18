@@ -41,15 +41,17 @@
             <TextView
                 android:id="@+id/text_content_synopsis"
                 style="@style/TextViewSubtitle"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha=".7"
                 android:lineHeight="@dimen/movie_details_content_text_line_height"
                 android:textSize="@dimen/movie_details_content_text_size"
-                android:maxLines="3"
+                android:ellipsize="end"
                 android:text="@{viewModel.detailsMovie.overview}"
+                android:padding="@dimen/movie_details_synopsis_padding"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_synopsis"
+                app:layout_constraintEnd_toEndOf="parent"
                 tools:text="The asgardian Loki encounters the Other, the leadr of an extraterrestrial race kgnow as the chhitaruior oifhgiusdhfgoiu ahdfiogu" />
 
             <TextView
