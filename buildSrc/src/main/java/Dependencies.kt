@@ -1,7 +1,7 @@
 object Plugins {
     val androidApplication by lazy { "com.android.application" }
     val kotlinAndroid by lazy { "kotlin-android" }
-    val navigationSafeArgs by lazy { "androidx.navigation.safeargs" }
+    val navigationSafeArgs by lazy { "androidx.navigation.safeargs.kotlin" }
     val kapt by lazy { "kotlin-kapt" }
 }
 
