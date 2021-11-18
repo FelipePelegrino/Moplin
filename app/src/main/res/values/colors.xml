@@ -10,6 +10,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text_color">#DEDDDF</color>
     <color name="background">#1C1A29</color>
+    <color name="background_list_comments">#242135</color>
     <color name="status_bar">#171424</color>
     <color name="status_bar_splash_screen">#1C1A29</color>
+    <color name="text_secondary_color">#777777</color>
+    <color name="text_comment_color">#A4A3A9</color>
 </resources>

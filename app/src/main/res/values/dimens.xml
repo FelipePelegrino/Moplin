@@ -9,13 +9,44 @@
     <!-- Header Movie List -->
     <dimen name="header_movie_list_height">80dp</dimen>
 
+    <!-- Header Movie Details -->
+    <dimen name="header_movie_details_height">380dp</dimen>
+    <dimen name="header_movie_details_card_corner_radius">24dp</dimen>
+    <dimen name="header_movie_details_layout_marginTop">-24dp</dimen>
+    <dimen name="header_movie_details_back_button_paddingHorizontal">20dp</dimen>
+    <dimen name="header_movie_details_back_button_paddingTop">44dp</dimen>
+    <dimen name="header_movie_details_back_button_paddingBottom">20dp</dimen>
+    <dimen name="header_movie_details_card_poster_margin">24dp</dimen>
+    <dimen name="header_movie_details_image_poster_width">150dp</dimen>
+    <dimen name="header_movie_details_image_poster_height">225dp</dimen>
+    <dimen name="header_movie_details_text_title_height">24dp</dimen>
+    <dimen name="header_movie_details_text_title_size">20sp</dimen>
+    <dimen name="header_movie_details_text_time_size">12sp</dimen>
+    <dimen name="header_movie_details_text_time_margin_top">12dp</dimen>
+    <dimen name="header_movie_details_text_votes_margin_start">8dp</dimen>
+    <dimen name="header_movie_details_image_star_margin_top">4dp</dimen>
+
+    <!-- Movie Details -->
+    <dimen name="movie_details_content_text_line_height">23sp</dimen>
+    <dimen name="movie_details_content_text_size">14dp</dimen>
+    <dimen name="movie_details_recycle_comments_margin">16dp</dimen>
+    <dimen name="movie_details_list_comments_margin">10dp</dimen>
+
     <!-- Item Movie List -->
     <dimen name="item_image_height">225dp</dimen>
     <dimen name="item_image_width">150dp</dimen>
     <dimen name="item_margin_end">4dp</dimen>
 
+    <!-- Item Comments -->
+    <dimen name="item_comments_user_margin_top">18dp</dimen>
+    <dimen name="item_comments_margin_top">8dp</dimen>
+    <dimen name="item_comments_user_text_size">18sp</dimen>
+    <dimen name="item_comments_text_size">14sp</dimen>
+    <dimen name="item_comments_view_height">1dp</dimen>
+
     <!-- RecyclerView -->
     <dimen name="recycler_padding">4dp</dimen>
     <dimen name="recycler_margin">6dp</dimen>
+
 
 </resources>

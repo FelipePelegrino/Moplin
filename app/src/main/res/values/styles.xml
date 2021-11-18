@@ -14,4 +14,9 @@
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
     </style>
 
+    <style name="TextViewDetails">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
 </resources>

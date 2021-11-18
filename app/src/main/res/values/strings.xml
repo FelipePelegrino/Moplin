@@ -8,5 +8,9 @@
     <string name="recycler_upcoming_description">Lista de filmes em breve</string>
     <string name="recycler_popular_description">Lista de filmes mais populares</string>
     <string name="recycler_top_rated_description">Lista de filmes melhores avaliados</string>
+    <string name="recycler_similar_movies_description">Lista de filmes similares a esse</string>
+    <string name="text_synopsis">Sinopse</string>
+    <string name="text_similar_movies">Mais Como Este</string>
+    <string name="text_comments">Comentários</string>
 
 </resources>

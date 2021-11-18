@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/movie_details_recycle_comments_margin"
+        app:cardBackgroundColor="@color/background_list_comments"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_comments"
+            style="@style/RecyclerViewBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/movie_details_recycle_comments_margin"
+            android:layout_marginBottom="@dimen/movie_details_recycle_comments_margin"
+            android:contentDescription="@string/recycler_similar_movies_description"
+            android:orientation="vertical"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_comments" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+
