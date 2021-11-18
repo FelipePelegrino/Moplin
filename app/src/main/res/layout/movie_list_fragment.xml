@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MovieListFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.gmail.devpelegrino.moplim.viewmodel.MovieListViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/header_movie_list" />
+
+            <TextView
+                android:id="@+id/text_now_playing"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_view_now_playing"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_now_playing"
+                style="@style/RecyclerViewBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_movie_list"
+                app:layout_constraintStart_toStartOf="@id/text_now_playing"
+                app:layout_constraintTop_toBottomOf="@id/text_now_playing"
+                android:contentDescription="@string/recycler_now_playing_description"/>
+
+            <TextView
+                android:id="@+id/text_upcoming"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_view_upcoming"
+                app:layout_constraintTop_toBottomOf="@id/recycler_now_playing"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_upcoming"
+                style="@style/RecyclerViewBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_movie_list"
+                app:layout_constraintStart_toStartOf="@id/text_upcoming"
+                app:layout_constraintTop_toBottomOf="@id/text_upcoming"
+                android:contentDescription="@string/recycler_upcoming_description"/>
+
+            <TextView
+                android:id="@+id/text_popular"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_view_popular"
+                app:layout_constraintTop_toBottomOf="@id/recycler_upcoming"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_popular"
+                style="@style/RecyclerViewBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_movie_list"
+                app:layout_constraintStart_toStartOf="@id/text_popular"
+                app:layout_constraintTop_toBottomOf="@id/text_popular"
+                android:contentDescription="@string/recycler_popular_description"/>
+
+            <TextView
+                android:id="@+id/text_top_rated"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_view_top_rated"
+                app:layout_constraintTop_toBottomOf="@id/recycler_popular"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_top_rated"
+                style="@style/RecyclerViewBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_movie_list"
+                app:layout_constraintStart_toStartOf="@id/text_top_rated"
+                app:layout_constraintTop_toBottomOf="@id/text_top_rated"
+                android:contentDescription="@string/recycler_top_rated_description"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

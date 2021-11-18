@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Moplim</string>
+    <string name="text_view_now_playing">Em Exibição</string>
+    <string name="text_view_upcoming">Em Breve</string>
+    <string name="text_view_popular">Mais Populares</string>
+    <string name="text_view_top_rated">Melhores Avaliados</string>
+    <string name="recycler_now_playing_description">Lista de filmes em exibição</string>
+    <string name="recycler_upcoming_description">Lista de filmes em breve</string>
+    <string name="recycler_popular_description">Lista de filmes mais populares</string>
+    <string name="recycler_top_rated_description">Lista de filmes melhores avaliados</string>
+    <string name="recycler_similar_movies_description">Lista de filmes similares a esse</string>
+    <string name="text_synopsis">Sinopse</string>
+    <string name="text_similar_movies">Mais Como Este</string>
+    <string name="text_comments">Comentários</string>
+    <string name="error_network_not_connected">Sem conexão de internet</string>
+
+
 </resources>

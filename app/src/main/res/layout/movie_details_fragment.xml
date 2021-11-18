@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MovieDetailsFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gmail.devpelegrino.moplim.viewmodel.MovieDetailsViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <include
+                android:id="@+id/header_details"
+                layout="@layout/header_movie_details"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_movie_details_height"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_synopsis"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_synopsis"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_details" />
+
+            <TextView
+                android:id="@+id/text_content_synopsis"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".7"
+                android:lineHeight="@dimen/movie_details_content_text_line_height"
+                android:textSize="@dimen/movie_details_content_text_size"
+                android:ellipsize="end"
+                android:text="@{viewModel.detailsMovie.overview}"
+                android:padding="@dimen/movie_details_synopsis_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_synopsis"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="The asgardian Loki encounters the Other, the leadr of an extraterrestrial race kgnow as the chhitaruior oifhgiusdhfgoiu ahdfiogu" />
+
+            <TextView
+                android:id="@+id/text_comments"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_comments"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_content_synopsis" />
+
+            <include
+                android:id="@+id/list_reviews"
+                layout="@layout/recycler_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/movie_details_list_comments_margin"
+                app:layout_constraintBottom_toTopOf="@id/text_similar_movies"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_comments" />
+
+            <TextView
+                android:id="@+id/text_similar_movies"
+                style="@style/TextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_similar_movies"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/list_reviews" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_similar_movies"
+                style="@style/RecyclerViewBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_list_comments"
+                android:contentDescription="@string/recycler_similar_movies_description"
+                app:layout_constraintStart_toStartOf="@id/text_similar_movies"
+                app:layout_constraintTop_toBottomOf="@id/text_similar_movies"
+                tools:listitem="@layout/item_movie_list" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
