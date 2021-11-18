@@ -6,12 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import com.gmail.devpelegrino.moplim.R
 import com.gmail.devpelegrino.moplim.adapter.MovieListAdapter
 import com.gmail.devpelegrino.moplim.adapter.MovieReviewAdapter
 import com.gmail.devpelegrino.moplim.databinding.MovieDetailsFragmentBinding
 import com.gmail.devpelegrino.moplim.factory.MovieDetailsViewModelFactory
+import com.gmail.devpelegrino.moplim.util.internetIsConnected
+import com.gmail.devpelegrino.moplim.util.isNetworkConnected
 import com.gmail.devpelegrino.moplim.viewmodel.MovieDetailsViewModel
 
 class MovieDetailsFragment : Fragment() {
@@ -38,8 +42,17 @@ class MovieDetailsFragment : Fragment() {
         return bindingFragment.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        if(!isNetworkConnected(requireContext())) {
+            Toast.makeText(requireContext(), R.string.error_network_not_connected, Toast.LENGTH_SHORT).show()
+        } else if(!internetIsConnected()) {
+            Toast.makeText(requireContext(), R.string.error_network_not_connected, Toast.LENGTH_SHORT).show()
+        }
+    }
+
     private fun setViewModel() {
-        viewModel = ViewModelProvider(this, MovieDetailsViewModelFactory(viewLifecycleOwner)).get(
+        viewModel = ViewModelProvider(this, MovieDetailsViewModelFactory(viewLifecycleOwner, requireContext())).get(
             MovieDetailsViewModel::class.java
         )
     }

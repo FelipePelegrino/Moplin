@@ -1,5 +1,7 @@
 package com.gmail.devpelegrino.moplim.viewmodel
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +14,7 @@ import com.gmail.devpelegrino.moplim.network.entity.ReviewListEntity
 import com.gmail.devpelegrino.moplim.repository.FactoryRepository
 import com.gmail.devpelegrino.moplim.util.toModel
 
-class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel() {
+class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner, private val context: Context) : ViewModel() {
 
     private val _repository = FactoryRepository().getRetrofitRepository()
 
@@ -48,7 +50,7 @@ class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewMo
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar erro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -75,7 +77,7 @@ class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewMo
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar erro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -98,7 +100,7 @@ class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewMo
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar erro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

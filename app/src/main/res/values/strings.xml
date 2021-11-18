@@ -12,5 +12,7 @@
     <string name="text_synopsis">Sinopse</string>
     <string name="text_similar_movies">Mais Como Este</string>
     <string name="text_comments">Comentários</string>
+    <string name="error_network_not_connected">Sem conexão de internet</string>
+
 
 </resources>

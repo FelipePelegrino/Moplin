@@ -1,5 +1,7 @@
 package com.gmail.devpelegrino.moplim.viewmodel
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +12,7 @@ import com.gmail.devpelegrino.moplim.network.ResultApi
 import com.gmail.devpelegrino.moplim.repository.FactoryRepository
 import com.gmail.devpelegrino.moplim.util.toModel
 
-class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel() {
+class MovieListViewModel(private val lifecycleOwner: LifecycleOwner, private val context: Context) : ViewModel() {
 
     private val _repository = FactoryRepository().getRetrofitRepository()
 
@@ -52,7 +54,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar erro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -81,7 +83,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar erro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -110,7 +112,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar errro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -139,7 +141,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
                             }
                         }
                         is ResultApi.Error -> {
-                            //TODO: tratar errro
+                            Toast.makeText(context, resultApi.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

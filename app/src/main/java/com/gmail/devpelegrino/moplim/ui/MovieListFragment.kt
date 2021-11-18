@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import com.gmail.devpelegrino.moplim.R
 import com.gmail.devpelegrino.moplim.adapter.MovieListAdapter
 import com.gmail.devpelegrino.moplim.databinding.MovieListFragmentBinding
 import com.gmail.devpelegrino.moplim.factory.MovieListViewModelFactory
+import com.gmail.devpelegrino.moplim.util.internetIsConnected
+import com.gmail.devpelegrino.moplim.util.isNetworkConnected
 import com.gmail.devpelegrino.moplim.viewmodel.MovieListViewModel
 
 class MovieListFragment : Fragment() {
@@ -33,6 +37,15 @@ class MovieListFragment : Fragment() {
         setConfigurations()
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(!isNetworkConnected(requireContext())) {
+            Toast.makeText(requireContext(), R.string.error_network_not_connected, Toast.LENGTH_SHORT).show()
+        } else if(!internetIsConnected()) {
+            Toast.makeText(requireContext(), R.string.error_network_not_connected, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setConfigurations() {
@@ -63,7 +76,7 @@ class MovieListFragment : Fragment() {
     }
 
     private fun setViewModel() {
-        viewModel = ViewModelProvider(this, MovieListViewModelFactory(viewLifecycleOwner)).get(
+        viewModel = ViewModelProvider(this, MovieListViewModelFactory(viewLifecycleOwner, requireContext())).get(
             MovieListViewModel::class.java
         )
     }
