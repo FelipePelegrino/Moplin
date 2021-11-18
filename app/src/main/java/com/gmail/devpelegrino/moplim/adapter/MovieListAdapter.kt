@@ -31,7 +31,6 @@ class MovieListAdapter(private val _itemMovieListener: (position: Int) -> Unit) 
                 _movies.add(iterator.next())
             } while (iterator.hasNext())
         }
-
         notifyDataSetChanged()
     }
 

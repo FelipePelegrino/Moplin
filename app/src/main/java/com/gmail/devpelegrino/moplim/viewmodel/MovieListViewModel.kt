@@ -34,7 +34,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
     val moviesUpComing: LiveData<MutableList<Movie>>
         get() = _moviesUpComing
 
-    fun callApiGetMoviesNowPlaying(){
+    fun callApiGetMoviesNowPlaying() {
         getMoviesNowPlaying()
     }
 
@@ -63,7 +63,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
         _pageNowPlaying++
     }
 
-    fun callApiGetMoviesPopular(){
+    fun callApiGetMoviesPopular() {
         getMoviesPopular()
     }
 
@@ -92,7 +92,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
         _pagePopular++
     }
 
-    fun callApiGetMoviesTopRated(){
+    fun callApiGetMoviesTopRated() {
         getMoviesTopRated()
     }
 
@@ -121,7 +121,7 @@ class MovieListViewModel(private val lifecycleOwner: LifecycleOwner) : ViewModel
         _pageTopRated++
     }
 
-    fun callApiGetMoviesUpComing(){
+    fun callApiGetMoviesUpComing() {
         getMoviesUpComing()
     }
 
