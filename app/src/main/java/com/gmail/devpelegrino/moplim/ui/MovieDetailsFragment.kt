@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.gmail.devpelegrino.moplim.adapter.MovieListAdapter
+import com.gmail.devpelegrino.moplim.adapter.MovieReviewAdapter
 import com.gmail.devpelegrino.moplim.databinding.MovieDetailsFragmentBinding
 import com.gmail.devpelegrino.moplim.factory.MovieDetailsViewModelFactory
 import com.gmail.devpelegrino.moplim.viewmodel.MovieDetailsViewModel
@@ -19,7 +20,7 @@ class MovieDetailsFragment : Fragment() {
     private lateinit var viewModel: MovieDetailsViewModel
     private lateinit var bindingFragment: MovieDetailsFragmentBinding
     private lateinit var adapterSimilarMovies: MovieListAdapter
-//    private lateinit var adapterComments: CommentListAdapter
+    private lateinit var adapterComments: MovieReviewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +30,7 @@ class MovieDetailsFragment : Fragment() {
         bindingFragment = MovieDetailsFragmentBinding.inflate(inflater)
         bindingFragment.lifecycleOwner = viewLifecycleOwner
         bindingFragment.headerDetails.lifecycleOwner = viewLifecycleOwner
+        bindingFragment.listComments.lifecycleOwner = viewLifecycleOwner
 
         initVariables()
         setConfigurations()
@@ -57,7 +59,9 @@ class MovieDetailsFragment : Fragment() {
 
     private fun setRecyclerViews() {
         adapterSimilarMovies = MovieListAdapter { position -> actionClickSimilarMovies(position) }
+        adapterComments = MovieReviewAdapter()
         bindingFragment.recyclerSimilarMovies.adapter = adapterSimilarMovies
+        bindingFragment.listComments.recyclerComments.adapter = adapterComments
     }
 
     private fun actionClickSimilarMovies(position: Int) {
@@ -68,6 +72,7 @@ class MovieDetailsFragment : Fragment() {
     private fun setObservers() {
         setObserverSimilarMovies()
         setObserverDetailsMovie()
+        setObserverMovieReview()
     }
 
     private fun setObserverDetailsMovie() {
@@ -89,6 +94,25 @@ class MovieDetailsFragment : Fragment() {
                     adapterSimilarMovies.setLastMoviesFalse()
                     viewModel.updatePageSimilarMovies()
                     viewModel.callApiGetSimilarMovies(args.movieId)
+                }
+            })
+    }
+
+    fun setObserverMovieReview() {
+        viewModel.movieReview.observe(viewLifecycleOwner,
+            Observer {
+                if (it.results.isNotEmpty()) {
+                    adapterComments.setMovieReview(it)
+                }
+            })
+        viewModel.callApiGetMovieReview(args.movieId)
+
+        adapterComments.lastMovieReviewRecyclerView.observe(viewLifecycleOwner,
+            Observer {
+                if (it) {
+                    adapterComments.setLastMovieReviewRecyclerView()
+                    viewModel.updatePageMovieReview()
+                    viewModel.callApiGetMovieReview(args.movieId)
                 }
             })
     }

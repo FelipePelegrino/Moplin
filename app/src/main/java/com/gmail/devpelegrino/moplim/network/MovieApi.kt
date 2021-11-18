@@ -2,6 +2,7 @@ package com.gmail.devpelegrino.moplim.network
 
 import com.gmail.devpelegrino.moplim.network.entity.DetailsMovieEntity
 import com.gmail.devpelegrino.moplim.network.entity.MovieList
+import com.gmail.devpelegrino.moplim.network.entity.ReviewListEntity
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -56,4 +57,14 @@ interface MovieApi {
     suspend fun getDetailsMovie(
         @Path("movie_id") movieId: Int
     ): Response<DetailsMovieEntity>
+
+    @Headers(
+        "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTZkMmNiMzFhNmE4NjNjM2Y5ZDdiNzg2ZDc2YWViMCIsInN1YiI6IjYxOTNlMTY0NDU4MTk5MDA2NGM3NWU1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tq96KbuOXej5v3yvxew2tXSKx0WbmwFH77BO6EK5tYw",
+        "Content-Type: application/json;charset=utf-8"
+    )
+    @GET("movie/{movie_id}/reviews")
+    suspend fun getMovieReview(
+        @Path("movie_id") movieId: Int,
+        @Query("page") page: Int
+    ): Response<ReviewListEntity>
 }

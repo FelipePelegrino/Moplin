@@ -60,4 +60,13 @@ class MovieRepository(private val movieApi: MovieApi) {
             emit(ResultApi.Error(exception = Exception("Erro ao pesquisar os detalhes do filme")))
         }
     }
+
+    fun getMovieReview(movieId: Int, page: Int) = liveData {
+        val result = movieApi.getMovieReview(movieId, page)
+        if(result.isSuccessful){
+            emit(ResultApi.Success(data = result.body()))
+        } else {
+            emit(ResultApi.Error(exception = Exception("Erro ao pesquisar os comentários do filme")))
+        }
+    }
 }

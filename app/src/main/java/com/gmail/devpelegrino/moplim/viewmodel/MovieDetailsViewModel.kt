@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.gmail.devpelegrino.moplim.model.Movie
 import com.gmail.devpelegrino.moplim.network.ResultApi
 import com.gmail.devpelegrino.moplim.network.entity.DetailsMovieEntity
+import com.gmail.devpelegrino.moplim.network.entity.ReviewListEntity
 import com.gmail.devpelegrino.moplim.repository.FactoryRepository
 import com.gmail.devpelegrino.moplim.util.toModel
 
@@ -23,6 +24,11 @@ class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewMo
     private var _detailsMovie = MutableLiveData<DetailsMovieEntity>()
     val detailsMovie: LiveData<DetailsMovieEntity>
         get() = _detailsMovie
+
+    private var _pageReview = 1
+    private var _movieReview = MutableLiveData<ReviewListEntity>()
+    val movieReview: LiveData<ReviewListEntity>
+        get() = _movieReview
 
     fun callApiGetSimilarMovies(movieId: Int){
         getSimilarMovies(movieId)
@@ -74,5 +80,32 @@ class MovieDetailsViewModel(private val lifecycleOwner: LifecycleOwner) : ViewMo
                     }
                 }
             })
+    }
+
+    fun callApiGetMovieReview(movieId: Int){
+        getMovieReview(movieId)
+    }
+
+    private fun getMovieReview(movieId: Int) {
+        var result = _repository.getMovieReview(movieId, _pageReview)
+        result.observe(lifecycleOwner,
+            Observer {
+                it?.let { resultApi ->
+                    when (resultApi) {
+                        is ResultApi.Success -> {
+                            resultApi.data?.let { it ->
+                                _movieReview.value = it
+                            }
+                        }
+                        is ResultApi.Error -> {
+                            //TODO: tratar erro
+                        }
+                    }
+                }
+            })
+    }
+
+    fun updatePageMovieReview() {
+        _pageReview++
     }
 }
